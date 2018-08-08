@@ -1,11 +1,14 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require("body-parser");
 const app = express();
-const PORT = 6866;
+const PORT = 8888;
 
 app.use(express.static(path.join(__dirname, "./static")));
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({ urlencoded: true }));
 
 require("./server/config/mongoose");
 require("./server/config/routes")(app);

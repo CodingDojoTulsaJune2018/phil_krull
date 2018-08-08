@@ -7,7 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <%= users %> 
+    <h1>Add User</h1>
+    <form action="/users" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Add">
+    </form>
+    <%for(let user of users) { %>
+        <div>
+            <br>
+            <h2>User: <%= user.name %></h2>
+            <h2>Added products:</h2>
+            <ul>
+            <% for(let product of user.products) { %>
+                <li><%= product.name %></li>
+            <% } %>
+            </ul>
+            <h4>Add Product</h4>
+            <form action="/products/<%=user.id %>" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price">
+                <input type="submit" value="Add">
+            </form>
+            <hr>
+        </div>
+    <% } %>
 </body>
 </html>

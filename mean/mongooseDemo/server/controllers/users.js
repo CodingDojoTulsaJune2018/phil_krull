@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
+// getter
 const User = mongoose.model("User");
+
+const Product = mongoose.model("Product");
 
 module.exports = {
     index: (req, res) => {
@@ -16,8 +19,7 @@ module.exports = {
         console.log("1");
     }, 
     create: (req, res) => {
-        const user = new User();
-        user.age = 21;
+        const user = new User(req.body);
         user.save((err)=>{
             if(err){
                 console.log(err);
