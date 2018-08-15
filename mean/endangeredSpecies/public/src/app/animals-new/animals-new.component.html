@@ -1,0 +1,18 @@
+<h1>Add Animal</h1>
+<form action="" (submit)='addAnimal()'>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" name="createAnimal.name" [(ngModel)]='createAnimal.name'></td>
+    </tr>
+    <tr>
+      <td>Population:</td>
+      <td><input type="number" name="createAnimal.population" [(ngModel)]='createAnimal.population'></td>
+    </tr>
+    <tr>
+      <td><button type="submit">Add Animal</button></td>
+    </tr>
+  </table>
+</form>
+{{ createAnimal | json }}
+

@@ -16,5 +16,10 @@ module.exports = {
         Animal.findById(req.params.id)
         .then(animal => res.json(animal))
         .catch(err => res.send(err))
+    },
+    delete: (req, res) => {
+        Animal.findByIdAndRemove(req.params.id)
+        .then(result => res.json(result))
+        .catch(err => res.send(err))
     }
 }

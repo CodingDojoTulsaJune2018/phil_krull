@@ -1,0 +1,7 @@
+<div *ngIf='showAnimal'>
+  <h1>Show Animal</h1>
+  <h4>Name: <span>{{ showAnimal.name }}</span></h4>
+  <h4>Population: <span>{{ showAnimal.population }}</span></h4>
+  <button (click)='deleteAnimal(showAnimal._id)'>Delete</button>
+  <button [routerLink]="['/']">Go Home</button>
+</div>

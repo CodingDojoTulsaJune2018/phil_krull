@@ -1,0 +1,10 @@
+<div  *ngIf="animals">
+  <h1>All Animals</h1>
+  <div *ngFor='let animal of animals'>
+    <h4>Name: <span>{{ animal.name }}</span></h4>
+    <h4>Population: <span>{{ animal.population }}</span></h4>
+    <button [routerLink]="['one', animal._id]">Show</button>
+    <hr>
+  </div>
+  <router-outlet></router-outlet>
+</div>   
