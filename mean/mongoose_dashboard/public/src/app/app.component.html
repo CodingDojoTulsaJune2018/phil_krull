@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <div [routerLinkActive]="['active', 'hide']">
+    <a [routerLink]="['add']">Add</a>
+  </div>
+  <div [routerLinkActive]="['active', 'hide']">
+    <a [routerLink]="['']">Home</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

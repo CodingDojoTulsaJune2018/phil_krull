@@ -1,0 +1,6 @@
+<div *ngIf='users'>
+  <div *ngFor='let user of users; let i = index'>
+    <p>Name: {{ user.name }}</p>
+    <button [routerLink]="['show', i]">Show</button>
+  </div>
+</div>

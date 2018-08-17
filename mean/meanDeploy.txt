@@ -1,0 +1,93 @@
+----------------------- Part 4: Install dependencies -----------------------
+// In the ubuntu terminal: These establish some basic dependencies for deployment and the Linux server.
+sudo apt-get update
+sudo apt-get install -y build-essential openssl libssl-dev pkg-config
+
+// Type the following lines one at a time because they require confirmation. The first two commands install basic node and npm. The third line forcibly cleans the cache, which will give you an interesting comment. :)
+sudo apt-get install -y nodejs nodejs-legacy
+sudo apt-get install npm -y
+sudo npm cache clean -f
+// Note: In case the first command does not work, try sudo apt install nodejs-legacy instead.
+
+// Install the node package manager n and updated node.
+sudo npm install -g n
+sudo n stable
+
+// Install the Angular CLI
+sudo npm install -g @angular/cli
+
+// Install NGINX and git:
+sudo apt-get install nginx git -y
+
+----------------------- Part 5: Clone your project -----------------------
+// Navigate to
+cd /var/www
+// Clone Project
+sudo git clone {{your project file path on github/bitbucket}}
+
+----------------------- Part 6: Set up NGINX -----------------------
+cd /etc/nginx/sites-available
+sudo vim {{your cloned repo's name}}
+// use vim to add the following
+server {
+    listen 80;
+    location / {
+        proxy_pass http://{{PRIVATE-IP}}:{{NODE-PROJECT-PORT}};
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+sudo rm default
+sudo ln -s /etc/nginx/sites-available/fullMEAN_test /etc/nginx/sites-enabled/fullMEAN_test
+sudo rm /etc/nginx/sites-enabled/default
+
+----------------------- Part 7: Project Dependencies and pm2 -----------------------
+sudo npm install pm2 -g
+cd /var/www
+sudo chown -R ubuntu {{repo name}}
+
+cd {{repo name}}
+npm install
+cd {{angular project name, we usually call it public}}
+npm install
+ng build
+
+----------------------- Part 8: MongoDB -----------------------
+// use the below link to get the public key used by the package management system (1)
+// and select the correct list file for the version of ubuntu you're using (2)
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#import-the-public-key-used-by-the-package-management-system
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb
+// Use sudo apt-get install -y mongodb-org if the above command does not work.
+
+sudo mkdir /data
+sudo mkdir /data/db
+// change ownership from root to ubuntu
+sudo chown -R ubuntu /data
+
+// Use this to get PID for mongo
+ps -ax | grep mongo
+sudo kill {{ PID }}
+
+__________________SKIP THIS SECTION______________________________________________________________________
+sudo service mongod start
+// If you're having trouble getting mongod to start with service, try running it manually with sudo mongod and check for error messages.
+
+sudo service mongod status
+sudo systemctl enable mongod && sudo systemctl start mongod
+_________________________________________________________________________________________________________
+
+----------------------- Part 9: Start your server! -----------------------
+cd /var/www/{{repo name}}
+pm2 start mongod
+pm2 start server.js
+sudo service nginx stop && sudo service nginx start
+
+// Use pm2 logs to see the logs of your different pm2 instances.
+// pm2 show {{ pm2 instance id }} will give you details of that instance.
