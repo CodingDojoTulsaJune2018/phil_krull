@@ -1,3 +1,8 @@
+******************************************* Important ******************************************
+check your angular project folder(ie public) before you push it to github,  if it has a .git directory, delete it first
+rm -rf .git
+************************************************************************************************
+
 ----------------------- Part 4: Install dependencies -----------------------
 // In the ubuntu terminal: These establish some basic dependencies for deployment and the Linux server.
 sudo apt-get update
@@ -41,7 +46,7 @@ server {
     }
 }
 sudo rm default
-sudo ln -s /etc/nginx/sites-available/fullMEAN_test /etc/nginx/sites-enabled/fullMEAN_test
+sudo ln -s /etc/nginx/sites-available/{{repo name}} /etc/nginx/sites-enabled/{{repo name}}
 sudo rm /etc/nginx/sites-enabled/default
 
 ----------------------- Part 7: Project Dependencies and pm2 -----------------------
