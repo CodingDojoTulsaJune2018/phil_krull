@@ -1,0 +1,11 @@
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/bin/Debug/netcoreapp2.0/demo.deps.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/bin/Debug/netcoreapp2.0/demo.runtimeconfig.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/bin/Debug/netcoreapp2.0/demo.runtimeconfig.dev.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/bin/Debug/netcoreapp2.0/demo.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/bin/Debug/netcoreapp2.0/demo.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/obj/Debug/netcoreapp2.0/demo.csprojResolveAssemblyReference.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/obj/Debug/netcoreapp2.0/demo.csproj.CoreCompileInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/obj/Debug/netcoreapp2.0/demo.AssemblyInfoInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/obj/Debug/netcoreapp2.0/demo.AssemblyInfo.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/obj/Debug/netcoreapp2.0/demo.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/demo/obj/Debug/netcoreapp2.0/demo.pdb
