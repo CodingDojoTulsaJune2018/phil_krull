@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+@{foreach(Trail trail in ViewBag.AllTrails)
+    {
+        <h2>The name of the trail is: @trail.Name</h2>
+    }
+}

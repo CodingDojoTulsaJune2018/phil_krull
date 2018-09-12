@@ -1,0 +1,10 @@
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/bin/Debug/netcoreapp2.0/DojoDachi.deps.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/bin/Debug/netcoreapp2.0/DojoDachi.runtimeconfig.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/bin/Debug/netcoreapp2.0/DojoDachi.runtimeconfig.dev.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/bin/Debug/netcoreapp2.0/DojoDachi.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/bin/Debug/netcoreapp2.0/DojoDachi.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/obj/Debug/netcoreapp2.0/DojoDachi.csproj.CoreCompileInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/obj/Debug/netcoreapp2.0/DojoDachi.AssemblyInfoInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/obj/Debug/netcoreapp2.0/DojoDachi.AssemblyInfo.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/obj/Debug/netcoreapp2.0/DojoDachi.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/DojoDachi/obj/Debug/netcoreapp2.0/DojoDachi.pdb

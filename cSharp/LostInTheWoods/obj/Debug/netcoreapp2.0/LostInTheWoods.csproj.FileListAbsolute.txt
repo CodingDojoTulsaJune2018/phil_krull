@@ -1,0 +1,10 @@
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.deps.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.runtimeconfig.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.runtimeconfig.dev.json
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/bin/Debug/netcoreapp2.0/LostInTheWoods.pdb
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.csproj.CoreCompileInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.AssemblyInfoInputs.cache
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.AssemblyInfo.cs
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.dll
+/Users/pkrull/Documents/codingDojo/cohorts/tulsa_june_2018/cSharp/LostInTheWoods/obj/Debug/netcoreapp2.0/LostInTheWoods.pdb
