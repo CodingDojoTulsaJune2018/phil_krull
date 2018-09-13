@@ -1,12 +1,29 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Lost in the Woods";
 }
 
+<div>
+    <h2>Lost in the Woods <span class="paragraph">List of local hiking trails</span></h2>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Trail Name</th>
+            <th scope="col">Trail Length</th>
+            <th scope="col">Elevation Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{foreach(Trail trail in ViewBag.AllTrails)
+            {
+                <tr>
+                    <td><a href='@("/Trail/"+trail.Trails_Id)'>@trail.Name</a></td>
+                    <td>@trail.Length miles</td>
+                    <td>@trail.Elevation feet</td>
+                </tr>
+            }
+        }
+    </tbody>
+    </table>
+    <a class="btn btn-warning" href="/NewTrail" role="button">Add a new Trail</a>
+</div>
 
-
-
-@{foreach(Trail trail in ViewBag.AllTrails)
-    {
-        <h2>The name of the trail is: @trail.Name</h2>
-    }
-}

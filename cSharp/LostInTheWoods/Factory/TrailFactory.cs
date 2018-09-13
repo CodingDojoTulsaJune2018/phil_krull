@@ -38,12 +38,12 @@ namespace LostInTheWoods.Factory
                 return dbConnection.Query<Trail>("SELECT * FROM trails");
             }
         }
-        public Trail FindByID(int id)
+        public Trail FindByID(long id)
         {
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                return dbConnection.Query<Trail>("SELECT * FROM trails WHERE id = @Id", new { Id = id }).FirstOrDefault();
+                return dbConnection.Query<Trail>("SELECT * FROM trails WHERE trails_id = @Id", new { Id = id }).FirstOrDefault();
             }
         }
 

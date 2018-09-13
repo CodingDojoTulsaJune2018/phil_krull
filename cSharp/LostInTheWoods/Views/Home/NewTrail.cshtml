@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Lost in the Woods";
+}
+<h3>@ViewData["Message"]</h3>
+
+<a class="btn btn-warning" href="/">Go Home</a>
+@model Trail
+<form method="post" action="AddTrail">
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-8">
+            <input type="text" id="name" asp-for="Name" class="form-control" placeholder="Enter a Name">
+            <span asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-8">
+            <textarea class="form-control" placeholder="Enter a Description" asp-for="Description" id="description" cols="30" rows="10"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="length" class="col-sm-2 col-form-label">Length</label>
+        <div class="col-sm-8">
+            <input type="text" id="length" asp-for="Length" class="form-control" placeholder="Enter a Length">
+            <span asp-validation-for="Length"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="elevation" class="col-sm-2 col-form-label">Elevation</label>
+        <div class="col-sm-8">
+            <input type="text" id="elevation" asp-for="Elevation" class="form-control" placeholder="Enter a Elevation">
+            <span asp-validation-for="Elevation"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-offset-2">
+            <div class="col-sm-3">
+                <label for="longitude" class="col-sm-2 col-form-label">Longitude</label>
+                <input id="longitude" type="text" asp-for="Longitude" class="form-control" placeholder="Enter a Longitude">
+                <span asp-validation-for="Longitude"></span>
+            </div>
+            <div class="col-sm-3">
+                <label for="latitude" class="col-sm-2 col-form-label">Latitude</label>
+                <input id="latitude" type="text" asp-for="Latitude" class="form-control" placeholder="Enter a Latitude">
+                <span asp-validation-for="Latitude"></span>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

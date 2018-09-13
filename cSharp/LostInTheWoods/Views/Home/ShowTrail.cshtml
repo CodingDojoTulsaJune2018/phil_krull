@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-offset-10">
+        <a class="btn btn-warning" href="/">Go Home</a>
+    </div>
+    <h2>@ViewBag.Trail.Name</h2>
+</div>
+<div class="col-sm-offset-1">
+    <div class="row">
+        <h2>Description:</h2>
+        <div class="col-sm-offset-1">
+            <p>@ViewBag.Trail.Description</p>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Trail Length:</h2>
+        <div class="col-sm-offset-1">
+            <p>@ViewBag.Trail.Length Miles</p>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Elevation Change:</h2>
+        <div class="col-sm-offset-1">
+            <p>@ViewBag.Trail.Elevation' Change</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-8">
+            <p>Longitude - @ViewBag.Trail.Longitude&#176;N</p>
+            <p>Latitude - @ViewBag.Trail.Latitude&#176;W</p>
+        </div>
+    </div>
+</div>

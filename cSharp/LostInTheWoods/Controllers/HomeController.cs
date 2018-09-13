@@ -16,43 +16,59 @@ namespace LostInTheWoods.Controllers
         {
             trailFactory = new TrailFactory();
         }
+        [HttpGet("")]
         public IActionResult Index()
         {
-            Trail newTrail = new Trail();
+            // ----------------- Below for testing only -----------------
+            // Trail newTrail = new Trail();
 
-            newTrail.Name = "Trail 4";
-            newTrail.Description = "Description for trail 4";
-            newTrail.Length = 1000;
-            newTrail.Elevation = 5000;
-            newTrail.Longitude = 45;
-            newTrail.Latitude = 45;
+            // newTrail.Name = "Trail 4";
+            // newTrail.Description = "Description for trail 4";
+            // newTrail.Length = 1000;
+            // newTrail.Elevation = 5000;
+            // newTrail.Longitude = 45;
+            // newTrail.Latitude = 45;
 
-            trailFactory.Add(newTrail);
+            // trailFactory.Add(newTrail);
 
             IEnumerable<Trail> allTrails = trailFactory.FindAll();
             Console.WriteLine("--------------------------------------------------------------------------------------------");
             Console.WriteLine($"There are {allTrails.Count()} trails in the database and the names are:");
-            foreach(Trail trail in allTrails)
-            {
-                Console.WriteLine($"The name of the trail is: {trail.Name}");
-            }
+            // foreach(Trail trail in allTrails)
+            // {
+            //     Console.WriteLine($"The name of the trail is: {trail.Name}");
+            // }
 
             ViewBag.AllTrails = allTrails;
 
             return View();
         }
 
-        public IActionResult About()
+        [HttpPost("AddTrail")]
+        public IActionResult AddTrail(Trail trail)
         {
-            ViewData["Message"] = "Your application description page.";
+            if(ModelState.IsValid)
+            {
+                trailFactory.Add(trail);
+                return RedirectToAction("Index");
+            } else {
+                return View("NewTrail", trail);
+            }
+        }
+
+        [HttpGet("NewTrail")]
+        public IActionResult NewTrail()
+        {
+            ViewData["Message"] = "Add a New Trail";
 
             return View();
         }
 
-        public IActionResult Contact()
+        [HttpGet("Trail/{Trail_Id}")]
+        public IActionResult ShowTrail(long Trail_Id)
         {
-            ViewData["Message"] = "Your contact page.";
-
+            Trail trail = trailFactory.FindByID(Trail_Id);
+            ViewBag.Trail = trail;
             return View();
         }
 
