@@ -20,6 +20,8 @@ namespace EFBooksAndAuthors.Controllers
         {
             IndexViewModel viewModel = new IndexViewModel();
             viewModel.AllAuthors = GetAuthors();
+            viewModel.AllBooks = GetBooks();
+            viewModel.AllPublishers = GetPublishers();
 
             // List<Author> AllAuthors = _context.Authors.ToList();
             // Console.WriteLine("====================================================================");
@@ -52,6 +54,8 @@ namespace EFBooksAndAuthors.Controllers
 
                 IndexViewModel viewModel = new IndexViewModel();
                 viewModel.AllAuthors = GetAuthors();
+                viewModel.AllBooks = GetBooks();
+                viewModel.AllPublishers = GetPublishers();
                 viewModel.Author = author;
 
                 return View("Index", viewModel);
@@ -75,6 +79,53 @@ namespace EFBooksAndAuthors.Controllers
             } else {
                 // show the validations
                 ViweToIndex.Book = book;
+                ViweToIndex.AllBooks = GetBooks();
+                ViweToIndex.AllPublishers = GetPublishers();
+
+                return View("Index", ViweToIndex);
+            }
+        }
+
+        [HttpPost("AddPublisher")]
+        public IActionResult AddPublisher(Publisher publisher)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Publishers.Add(publisher);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            } else {
+                IndexViewModel ViweToIndex = new IndexViewModel();
+                ViweToIndex.Publisher = publisher;
+                ViweToIndex.AllAuthors = GetAuthors();
+                ViweToIndex.AllBooks = GetBooks();
+                ViweToIndex.AllPublishers = GetPublishers();
+
+                return View("Index", ViweToIndex);
+            }
+        }
+
+        [HttpPost("AddBookToPublisher")]
+        public IActionResult AddBookToPublisher(Publication publication)
+        {
+            if(ModelState.IsValid)
+            {
+                Book book = _context.Books.SingleOrDefault(b => b.BookId == publication.BookId);
+                Publisher publisher = _context.Publishers.SingleOrDefault(p => p.PublisherId == publication.PublisherId);
+
+                publication.Book = book;
+                publication.Publisher = publisher;
+
+                _context.Publications.Add(publication);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            } else {
+                IndexViewModel ViweToIndex = new IndexViewModel();
+                ViweToIndex.Publication = publication;
+                ViweToIndex.AllAuthors = GetAuthors();
+                ViweToIndex.AllBooks = GetBooks();
+                ViweToIndex.AllPublishers = GetPublishers();
 
                 return View("Index", ViweToIndex);
             }
@@ -89,7 +140,18 @@ namespace EFBooksAndAuthors.Controllers
         {
             return _context.Authors
             .Include(author => author.Books)
+            .ThenInclude(book => book.Publishers)
+            .ThenInclude(publication => publication.Publisher)
             .ToList();
+        }
+        private List<Book> GetBooks()
+        {
+            return _context.Books.ToList();
+        }
+
+        private List<Publisher> GetPublishers()
+        {
+            return _context.Publishers.ToList();
         }
     }
 }

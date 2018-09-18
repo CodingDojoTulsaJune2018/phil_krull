@@ -4,25 +4,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EFBooksAndAuthors.Models
 {
-    public class Author
+    public class Publisher
     {
         [Key]
-        public long AuthorId {get; set;}
+        public long PublisherId {get; set;}
 
         [Required]
-        public string First_Name {get; set;}
+        public string Name {get; set;}
+
+        public List<Publication> Books {get; set;}
         
-        [Required]
-        public string Last_Name {get; set;}
-
-        public List<Book> Books {get; set;}
         public DateTime Created_At {get; set;}
 
         public DateTime Updated_At {get; set;}
 
-        public Author()
+        public Publisher()
         {
-            Books = new List<Book>();
+            Books = new List<Publication>();
             Created_At = DateTime.Now;
             Updated_At = DateTime.Now;
         }
